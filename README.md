@@ -1,6 +1,6 @@
 # Condenser
 
-Welcome to Condenser, a url shortening application!
+Welcome to Condenser, a url shortening application! A live prototype of this application can be found at https://condenser.sh
 
 ## Setup 
 
