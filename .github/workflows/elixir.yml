@@ -88,5 +88,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-
 
+      - name: Make csvs directory for tests
+        run: |
+          mkdir priv/csvs
+
       - name: Run tests
         run: mix test
