@@ -1,0 +1,27 @@
+<div class="text-center text-gray-800 py-20 px-6">
+  <h3 class="text-3xl">Enter your link below to received a shortened link:</h3>
+</div>
+<div class="flex flex-col justify-center items-center">
+  <.form
+    for={:form}
+    id="shorten-url-form"
+    phx-submit="save"
+    action={~p"/s/shorten"}
+    class="w-full max-w-sm"
+  >
+    <div class="flex items-center border-b border-teal-500 py-2">
+      <input
+        type="text"
+        name="long_url"
+        class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        placeholder="https://www.google.com"
+      />
+      <input
+        name="Shorten"
+        class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+        type="submit"
+        value="Shorten my URL"
+      />
+    </div>
+  </.form>
+</div>

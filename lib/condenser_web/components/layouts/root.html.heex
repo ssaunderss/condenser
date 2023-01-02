@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "Condenser" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+      <div class="px-6 w-full flex flex-wrap items-center justify-between">
+        <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
+          <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
+            <li class="nav-item">
+              <a
+                class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                href={~p"/"}
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                href={~p"/s/stats"}
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                Stats
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <body class="bg-gray-50 antialiased">
+    <% error = Phoenix.Flash.get(@flash, :error) %>
+    <%= if error do %>
+      <div class="px-10 py-5">
+        <div
+          class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+          role="alert"
+        >
+          <span class="block sm:inline"><%= error %></span>
+        </div>
+      </div>
+    <% end %>
+    <%= @inner_content %>
+  </body>
+</html>
