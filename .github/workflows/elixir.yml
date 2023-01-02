@@ -48,9 +48,6 @@ jobs:
     - name: Check Formatted
       run: mix format --check-formatted
 
-    - name: Run tests
-      run: mix test
-
   test:
     name: Test Application
     runs-on: ubuntu-latest
