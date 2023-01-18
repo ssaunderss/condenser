@@ -60,7 +60,7 @@ mix test
 - To keep stats queries on the lighter side, I configured the results to be limited to 100 rows _(this value is configurable in `runtime.exs -> :top_hits_limit`)_
 - Slug length is 6 chars long and uses Base64 URL safe characters _(this value is also configurable in `runtime.exs -> :short_slug_length: 6`)_ - this leads to a max of 64^6 (~69bn short urls).
 - CSVs are generated in and served from `/priv`
-- Not concerned with client unique urls - that is if two different clients type in the same long url, they should both receive the same short url
+- Not concerned with client unique urls - that is if two different clients type in the same long url, they should both receive different short urls
 
 ### Overview
 
